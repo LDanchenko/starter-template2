@@ -100,8 +100,8 @@ require_once("config.php");
       </table>
 <?php
 
-if (isset($_SESSION['userid'])) {
-    echo '
+
+    if (!isset($_SESSION['userid'])) :?>
 
         <div class="col-sm-offset-2 col-sm-10">
 
@@ -141,9 +141,8 @@ if (isset($_SESSION['userid'])) {
 
             </div>
         </div>
-    </form>';
-}
-    ?>
+    </form>
+    <?php endif; ?>
 
     </div><!-- /.container -->
     <!-- Bootstrap core JavaScript

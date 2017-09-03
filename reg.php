@@ -54,8 +54,7 @@ require_once ("config.php");
 
     <div class="container">
         <?php
-        if (!isset($_SESSION['userid'])) {
-            echo '
+        if (!isset($_SESSION['userid'])) :?>
       <div class="form-container">
         <form class="form-horizontal" id="registr_form" action="" onsubmit="return false;">
           <div class="form-group">
@@ -84,16 +83,14 @@ require_once ("config.php");
             </div>
           </div>
         </form>
-      </div>';
-        } else {
-            echo '<form name="form" action="exit.php" method = "post">';
-            echo '<h2>';
-            echo 'Вы уже авторизировались!';
-            echo '</h2>';
-            echo '<button type="submit" id="exit_button" class="btn btn-default">Выход</button>';
-            echo '</form>';
-        }
-        ?>
+      </div><?php else: ?>
+            <form name="form" action="exit.php" method = "post">
+                <h2>
+                    Вы уже авторизировались!
+                </h2>
+                <button type="submit" id="exit_button" class="btn btn-default">Выход</button>
+            </form>
+        <?php endif; ?>
 
     </div><!-- /.container -->
 
